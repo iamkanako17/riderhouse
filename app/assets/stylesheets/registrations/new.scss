@@ -1,0 +1,40 @@
+.registration-main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.field-cover {
+  width: 50%;
+  height: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  padding-top: 20px;
+  width: 50%;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.actions {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  padding: 10px;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
