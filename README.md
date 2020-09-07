@@ -37,12 +37,12 @@ Riders can book a guest house or rider house on the trip.
   | hostname_kana  | string       | null: false                     |
   | age            | integer      | null: false                     |
   | gender         | integer      | null: false                     |
-  | addresses_id   | integer      | null: false, foreign_key: true  |
+  | inn_description_id   | integer      | null: false, foreign_key: true  |
 
   ### association
-  - has_one: inn_information
+  - has_one: inn_description
 
-  ## inn_information table
+  ## inn_descriptions table
   | Column         |     Type     |        Options                  |
   | -------------- | ------------ | ------------------------------- |
   | inns_name      | string       | null: false                     |
@@ -93,7 +93,7 @@ Riders can book a guest house or rider house on the trip.
   - % rails db:create
   - % rails db:migrate
   - % rails s
-  
+
 
 
 
