@@ -2,14 +2,10 @@
   box-sizing: border-box;
 }
 
-.nav {
-  padding: 15px;
-  justify-content: space-between;
-}
-
 .nav-bar {
   display: flex;
   font-size: 16px;
+  padding-bottom: 15px;
 }
 
 .contents {

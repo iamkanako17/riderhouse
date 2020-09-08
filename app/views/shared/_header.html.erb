@@ -4,8 +4,10 @@
     <ul class="nav-bar">
       <% if host_user_signed_in? %>
         <li class="contents"><%= link_to current_host_user.nickname, '#', class:'user-nickname' %></li>
+        <li class="contents"><%= link_to 'ログアウト', destroy_host_user_session_path, method: :delete, class: 'logout'%></li>
       <% else %>
         <li class="contents"><%= link_to 'ホストになる', new_host_user_registration_path, class:'sign-up' %></li>
+        <li class="contents"><%= link_to 'ログイン', new_host_user_session_path, class:'login'%></li>
         <li class="contents"><%= link_to '概要', class:'outline' %></li>
       <% end %>
     </ul>
