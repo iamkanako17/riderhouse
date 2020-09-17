@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_09_10_130223) do
     t.string "city", null: false
     t.string "block_number", null: false
     t.string "building"
+    t.text "description", null: false
     t.integer "host_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
