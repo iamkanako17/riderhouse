@@ -5,14 +5,14 @@ describe HostUser do
     @hostuser = FactoryBot.build(:host_user)
   end
 
-  describe 'ユーザー新規登録できる時' do
-    it "全ての値が存在すると登録できる" do
+  context 'ユーザー新規登録できる時' do
+    it '全ての値が存在すると登録できる' do
       expect(@hostuser).to be_valid
     end
   end
 
-  describe 'ユーザー新規登録うまく行かない時' do
-    it 'nicknameが空の時'  do
+  context 'ユーザー新規登録うまく行かない時' do
+    it 'nicknameが空の時' do
       @hostuser.nickname = ''
       @hostuser.valid?
       expect(@hostuser.errors.full_messages).to include('Nicknameを入力してください')
@@ -31,7 +31,7 @@ describe HostUser do
     end
 
     it 'hostnameに半角スペースが存在すると登録できない' do
-      @hostuser.hostname = 'ライダー ハウス' 
+      @hostuser.hostname = 'ライダー ハウス'
       @hostuser.valid?
       expect(@hostuser.errors.full_messages).to include('Hostnameは不正な値です')
     end
