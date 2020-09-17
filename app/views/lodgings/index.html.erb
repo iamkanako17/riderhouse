@@ -1,0 +1,50 @@
+<%= render "shared/header" %>
+
+<body>
+  <div class="title">
+    <div class="title-contents">
+      <%= image_tag "homeindex_moter.jpg", class: 'title-img'%>
+      <h2>ライダーハウス登録数No.1</h2>
+    </div>
+  </div>
+
+  <h2>全国の宿一覧</h2>
+
+  <div class="main">
+    <% @lodges.each do |lodge| %>
+      <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <% lodge.images.each do |image| %>
+              <div class="swiper-slide">
+                <%= link_to lodging_path(lodge.id), method: :get do %>
+                  <%= image_tag image, class:'images'%>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+      </div>
+    <% end %>
+  </div>
+
+  <script>
+    var Swiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true,
+    
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+  </script>
+</body>
