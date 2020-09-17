@@ -1,0 +1,74 @@
+.main {
+  background-color: #ffffff;
+}
+
+.lodge-regist-title {
+  margin: 0px auto;
+  padding: 40px;
+  border-bottom: 7px solid #f5a500;
+}
+
+.lodge-address {
+  width: 60%;
+  margin: 0px auto;
+  padding: 35px;
+  background-color: whitesmoke;
+}
+
+.message1 {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.name-price {
+  display: flex;
+}
+
+.price-box {
+  margin-left: 80px;
+}
+
+.lodge-description {
+  margin-bottom: 40px;
+}
+
+.indispensable {
+  background-color: red;
+  border-radius: 2px;
+  font-weight: bolder;
+  padding-left: 7px ;
+  width: 44px;
+  color: #ffffff;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.name-price .indispensable {
+  margin-right: 25px;
+}
+
+.lodge-text {
+  border: 1px solid coral;
+  border-radius: 2px;
+  margin-bottom: 25px;
+}
+
+.select-box {
+  height: 30px;
+  width: 90px;
+  border: 1px solid coral;
+  border-radius: 2px;
+  margin-bottom: 25px;
+}
+
+.form-text {
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+}

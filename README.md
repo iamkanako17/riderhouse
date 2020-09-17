@@ -42,17 +42,17 @@ Riders can book a guest house or rider house on the trip.
   ### association
   - has_one: inn_description
 
-  ## inn_descriptions table
+  ## lodgings table
   | Column         |     Type     |        Options                  |
   | -------------- | ------------ | ------------------------------- |
-  | inns_name      | string       | null: false                     |
+  | lodge_name     | string       | null: false                     |
+  | price          | string       | null: false                     |
   | postcode       | string       | null: false                     |
   | prefecture     | integer      | null: false                     |
   | city           | string       | null: false                     |
   | block_number   | string       | null: false                     |
-  | building       | string       | null: false                     |
+  | building       | string       |                                 |
   | host_user_id   | integer      | null: false                     |
-  | price          | string       | null: false                     |
 
   ### association
   - belongs_to: host_user
