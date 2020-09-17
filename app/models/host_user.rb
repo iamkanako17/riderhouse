@@ -9,11 +9,11 @@ class HostUser < ApplicationRecord
   with_options presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/ } do
     validates :hostname
   end
-
+  
   with_options presence: true, format: { with: /\A[ア-ヶ一ー]+\z/ } do
     validates :hostname_kana
   end
-
+  
   with_options presence: true do
     validates :nickname
     validates :phone, format: { with: /[0-9]{6,11}/ }, length: { maximum: 11 }
