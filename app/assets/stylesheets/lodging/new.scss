@@ -1,4 +1,4 @@
-.main {
+.new-main {
   background-color: #ffffff;
 }
 
@@ -8,11 +8,14 @@
   border-bottom: 7px solid #f5a500;
 }
 
-.lodge-address {
+.lodge-info {
   width: 60%;
   margin: 0px auto;
   padding: 35px;
   background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .message1 {

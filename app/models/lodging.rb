@@ -15,6 +15,7 @@ class Lodging < ApplicationRecord
     validates :prefecture_id
     validates :city
     validates :block_number
+    validates :description
     validates :images
   end
 end

@@ -65,5 +65,12 @@ describe Lodging do
       @lodging.valid?
       expect(@lodging.errors.full_messages).to include('Block numberを入力してください')
     end
+
+    it 'descriptionが空だと登録できない' do
+      @lodging.description = nil
+      @lodging.valid?
+      expect(@lodging.errors.full_messages).to include('Descriptionを入力してください')
+    end
+
   end
 end

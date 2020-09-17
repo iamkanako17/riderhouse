@@ -1,14 +1,14 @@
 <div>
   <header>
   </header>
-  <div class="main">
+  <div class="new-main">
 
     <%= form_with model: @lodge, local: true do |f| %>
 
       
       <h2 class="lodge-regist-title">become a host</h2>
       
-      <div class="lodge-address">
+      <div class="lodge-info">
         <div class="lodge-description">
           <div class="message1">宿を登録</div>
           <div class="message2">予約されるまでは、詳細な情報は公開されません。</div>
@@ -32,7 +32,7 @@
           <%= f.text_field :price, class:'lodge-text', id:'pricelabel', placeholder:'例) 3000'%>
         </div>
 
-
+        
         <div class="form-group">
           <label for="postlabel">
           郵便番号
@@ -72,6 +72,15 @@
         </div>
         <%= f.text_field :building, class:'lodge-text', id:'buildinglabel', placeholder:'例) 新宿ビル'%>
       
+        <div class="form-group">
+          <label for="descriptionlabel">
+          宿の説明
+          <span class="indispensable">必須</span>
+          </label>
+        </div>
+        <%= f.text_area :description, class:'lodge-text', id:'descriptionlabel', placeholder:'宿の説明', rows:"7", maxlength:"1000" %>
+        
+        
         
         <%= f.file_field :images, name: 'lodging[images][]', id: 'lodging_image' %>
         <div id="image-list"></div>
