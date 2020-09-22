@@ -32,16 +32,6 @@
             <%= f.text_field :price, class:'lodge-text', id:'pricelabel', placeholder:'例) 3000'%>
           </div>
 
-      
-      <h2 class="lodge-regist-title">become a host</h2>
-      
-      <div class="lodge-info">
-        <div class="lodge-description">
-          <div class="message1">宿を登録</div>
-          <div class="message2">予約されるまでは、詳細な情報は公開されません。</div>
-        </div>
-
-
           <div class="form-group">
             <label for="postlabel">
             郵便番号
@@ -59,18 +49,6 @@
 
           <%= f.text_field :prefecture_city, class:'lodge-text', id:'pref-city', placeholder:
           '例)東京都新宿区' %>
-
-          <%= f.text_field :price, class:'lodge-text', id:'pricelabel', placeholder:'例) 3000'%>
-        </div>
-
-        
-        <div class="form-group">
-          <label for="postlabel">
-          郵便番号
-          <span class="indispensable">必須</span>
-          </label>
-        </div>
-        <%= f.text_field :postcode, class:'lodge-text', id:'postlabel', placeholder:'例) 102-3456' %>
 
           <div class="form-group">
             <label for="blocklabel">
@@ -103,7 +81,6 @@
           <div class="btn">
             <%= f.submit '宿を提供する', class:'provide-btn' %>
           </div>
-          
           <%= link_to '戻る', root_path, class:'back-btn' %>
         </div>
       <% end %>

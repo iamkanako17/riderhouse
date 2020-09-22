@@ -1,9 +1,11 @@
-.new_header {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+.lodge-addmain {
+  // background-color: #ffffff;
+  background-color: whitesmoke;
+  padding: 0 200px;
 }
 
-.lodge-addmain {
-  background-color: #ffffff;
+.lodge-description {
+  margin-bottom: 100px;
 }
 
 .lodge-title {
@@ -14,8 +16,6 @@
 
 .lodge-address {
   width: 100%;
-  padding: 0 100px;
-  background-color: whitesmoke;
   padding-top: 50px;
 }
 
@@ -30,10 +30,6 @@
 
 .price-box {
   margin-left: 80px;
-}
-
-.lodge-description {
-  margin-bottom: 40px;
 }
 
 .indispensable {
@@ -69,7 +65,12 @@ label {
   font-weight: bold;
 }
 
-#map {
-  height: 200px;
-  width: 60%;
+.btn {
+  margin-top: 70px;
 }
+
+.provide-btn {
+  width: 100%;
+  text-align: center;
+}
+
