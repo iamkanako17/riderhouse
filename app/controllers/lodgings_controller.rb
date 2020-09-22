@@ -49,7 +49,8 @@ class LodgingsController < ApplicationController
   private
 
   def lodge_params
-    params.require(:lodging).permit(:lodge_name, :price, :postcode, :prefecture_city, :latitude, :longitude,:block_number, :building, :description, images: []).merge(host_user_id: current_host_user.id)
+    params.require(:lodging).permit(:lodge_name, :price, :postcode, :prefecture_city, :latitude, :longitude, :block_number, :building, :description, images: []).merge(host_user_id: current_host_user.id)
+
   end
 
   def set_lodge

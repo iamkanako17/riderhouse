@@ -16,6 +16,7 @@ class Lodging < ApplicationRecord
     validates :postcode, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
     validates :prefecture_city
     validates :block_number
+    validates :description
     validates :images
   end
 end
