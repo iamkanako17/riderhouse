@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+}
+
+.top {
+  width: 100%;
+  padding: 0 100px;
+  display: block;
+}
+
+.top-text {
+  margin-bottom: 10px;
+  padding-top: 30px;
+}
+
+.text-info {
+  font-weight: 600;
+  font-family: sans-serif;
+  font-size: 26px;
+  color: #222323;
+  margin: 0;
+}
+
+.where-lodge {
+  font-size: 14px;
+  color: #717171;
+  font-style: sans-serif;
+}
+
+.center {
+  width: 100%;
+}
+
+.center-image {
+  padding-right: 100px;
+  padding-left: 100px;
+  margin-bottom: 100px;
+  margin-top: 40px;
+}
+
+.show-images {
+  height: 500px;
+  width: 500px;
+}
+
+.under {
+  width: 100%;
+}
+
+.under {
+  display: flex;
+}
+
+.under-child1 {
+  padding-left: 100px;
+}
+
+.child1-title {
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.under-child2 {
+  flex-grow: 1;
+  padding: 0 200px;
+}
+
+#map {
+  height: 400px;
+  width: 400px;
+}
+
+footer {
+  color: #dddddd;
+  display: flex;
+  justify-content: center;
+}
+
+
