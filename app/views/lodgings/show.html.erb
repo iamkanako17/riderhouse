@@ -51,7 +51,7 @@
     function initMap() {
       let pin ={lat: <%= @lodge.latitude %>, lng: <%= @lodge.longitude %>};
       let map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 8, 
+                zoom: 12, 
                 center: pin
                 });
       let transitLayer = new google.maps.TransitLayer();
