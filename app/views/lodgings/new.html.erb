@@ -1,91 +1,93 @@
-<div>
-  <header>
+<body>
+  <header class="new_header">
+    <%= render "shared/header" %>
   </header>
-  <div class="main">
 
-    <%= form_with model: @lodge, local: true do |f| %>
+  <main>
+    <div class="lodge-addmain">
 
-      
-      <h2 class="lodge-regist-title">become a host</h2>
-      
-      <div class="lodge-address">
-        <div class="lodge-description">
-          <div class="message1">宿を登録</div>
-          <div class="message2">予約されるまでは、詳細な情報は公開されません。</div>
-        </div>
-
-        <div class="name-price">
-          <div class="form-group">
-            <label for="namelabel">
-            宿の名前は？
-            <span class="indispensable">必須</span>
-            </label>
-          </div>
-          <%= f.text_field :lodge_name, class:'lodge-text', id:'namelabel', placeholder:'例) ライダーハウス'%>
-
-          <div class="form-group price-box">
-            <label for="pricelabel">
-            1泊の値段は？
-            <span class="indispensable">必須</span>
-            </label>
-          </div>
-          <%= f.text_field :price, class:'lodge-text', id:'pricelabel', placeholder:'例) 3000'%>
-        </div>
-
-
-        <div class="form-group">
-          <label for="postlabel">
-          郵便番号
-          <span class="indispensable">必須</span>
-          </label>
-        </div>
-        <%= f.text_field :postcode, class:'lodge-text', id:'postlabel', placeholder:'例) 102-3456' %>
-
-        <div class="form-group">
-          <div class="form-text">
-            都道府県
-            <span class="indispensable">必須</span>
-          </div>
-        </div>
-        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"lodge-prefecture"}) %>
-
-        <div class="form-group">
-          <label for="citylabel">
-          市区町村
-          <span class="indispensable">必須</span>
-          </label>
-        </div>
-        <%= f.text_field :city, class:'lodge-text', id:'citylabel', placeholder:'例) 新宿区' %>
-
-        <div class="form-group">
-          <label for="blocklabel">
-          番地
-          <span class="indispensable">必須</span>
-          </label>
-        </div>
-        <%= f.text_field :block_number, class:'lodge-text', id:'blocklabel', placeholder:'例) 新宿1-1-1' %>
-      
-        <div class="form-group">
-          <label for="buildinglabel">
-          建物名
-          </label>
-        </div>
-        <%= f.text_field :building, class:'lodge-text', id:'buildinglabel', placeholder:'例) 新宿ビル'%>
-      
+      <%= form_with model: @lodge, local: true do |f| %>
         
-        <%= f.file_field :images, name: 'lodging[images][]', id: 'lodging_image' %>
-        <div id="image-list"></div>
+        <div class="lodge-address">
+          <div class="lodge-description">
+            <div class="message1">宿を登録</div>
+            <div class="message2">予約されるまでは、詳細な情報は公開されません。</div>
+          </div>
 
-        <div class="btn">
-          <%= f.submit '宿を提供する', class:'provide-btn'%>
+          <div class="name-price">
+            <div class="form-group">
+              <label for="namelabel">
+              宿の名前は？
+              <span class="indispensable">必須</span>
+              </label>
+            </div>
+            <%= f.text_field :lodge_name, class:'lodge-text', id:'namelabel', placeholder:'例) ライダーハウス'%>
+
+            <div class="form-group price-box">
+              <label for="pricelabel">
+              1泊の値段は？
+              <span class="indispensable">必須</span>
+              </label>
+            </div>
+            <%= f.text_field :price, class:'lodge-text', id:'pricelabel', placeholder:'例) 3000'%>
+          </div>
+
+
+          <div class="form-group">
+            <label for="postlabel">
+            郵便番号
+            <span class="indispensable">必須</span>
+            </label>
+          </div>
+          <%= f.text_field :postcode, class:'lodge-text', id:'postlabel', placeholder:'例) 102-3456' %>
+
+          <div class="form-group">
+            <label for="pref-city">
+              都道府県&市区町村
+            <span class="indispensable">必須</span>
+            </label>
+          </div>
+          <%= f.text_field :prefecture_city, class:'lodge-text', id:'pref-city', placeholder:
+          '例)東京都新宿区' %>
+
+          <div class="form-group">
+            <label for="blocklabel">
+            番地
+            <span class="indispensable">必須</span>
+            </label>
+          </div>
+          <%= f.text_field :block_number, class:'lodge-text', id:'blocklabel', placeholder:'例) 新宿1-1-1' %>
+        
+          <div class="form-group">
+            <label for="buildinglabel">
+            建物名
+            </label>
+          </div>
+          <%= f.text_field :building, class:'lodge-text', id:'buildinglabel', placeholder:'例) 新宿ビル'%>
+
+          <div class="form-group">
+            <label for="lodge-desc">
+            この宿について
+            <span class="indispensable">必須</span>
+            </label>
+          </div>
+          <%= f.text_area :description, class:"lodge-text", id:"lodge-desc", placeholder:"宿の説明", rows:"7" ,maxlength:"1000" %>
+
+          <%= f.file_field :images, name: 'lodging[images][]', id: 'lodging_image' %>
+          <div id="image-list"></div>
+
+          <div class="btn">
+            <%= f.submit '宿を提供する', class:'provide-btn' %>
+          </div>
+          
           <%= link_to '戻る', root_path, class:'back-btn' %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
 
-    <% @lodge.images.each do |image| %>
-      <%= image_tag image, class: 'images' %>
-    <% end %>
-      
-  </div>
-</div>
+      <% @lodge.images.each do |image| %>
+        <%= image_tag image, class: 'images' %>
+      <% end %>
+        
+    </div>
+  </main>
+</body>
