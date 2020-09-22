@@ -1,17 +1,66 @@
 <body>
   <header>
-    <div></div>
-    <div></div>
-    <div></div>
+    <%= render "shared/header" %>
   </header>
 
   <main id="site-content">
-    <div class=""></div>
-    <div></div>
+    <div class="top">
+      <div class="top-text" style="max-width: 1120px;">
+        <h1 class="text-info">
+          <%= @lodge.lodge_name %>
+        </h1>
+      </div>
+      <div class="top-area">
+        <section class="where-lodge">
+          <%= @lodge.prefecture_city %>
+        </section>
+      </div>
+    </div>
+
+    <div class="center">
+      <div class="center-image">
+        <% @lodge.images.each do |image| %>
+          <%= image_tag image, class:'show-images'%>
+        <% end %>
+      </div>
+    </div>
+    
+    <div class="under">
+      <div class="under-child1">
+        <p class="child1-title">詳細</p>
+        <%= @lodge.description %>
+      </div>
+      <div class="under-child2">
+        <div id="map"></div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAP_KEY']%>&callback=initMap"></script>
+      </div>
+    </div>
+
+    <% if host_user_signed_in? && current_host_user.id == @lodge.host_user_id %>
+      <%= link_to '宿の編集', edit_lodging_path(@lodge.id), method: :get, class:"edit-btn" %>
+      <%= link_to '削除', lodging_path(@lodge.id), method: :delete, class:"lodge-delete" %>
+    <% else %>
+      <%# <% link_to '予約する', 予約のformオブジェクトのパス(@lodge.id), httpメソッド, class:"クラス名" %>
+    <% end %>
   </main>
 
 
-  <footer></footer>
+  <footer>©️ Kanako Kurasawa2020</footer>
 
+  <script>
+    function initMap() {
+      let pin ={lat: <%= @lodge.latitude %>, lng: <%= @lodge.longitude %>};
+      let map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8, 
+                center: pin
+                });
+      let transitLayer = new google.maps.TransitLayer();
+      transitLayer.setMap(map);
 
+      let marker = new google.maps.Marker({
+                    position: pin,
+                    map: map,
+                  });
+    }
+  </script>
 </body>

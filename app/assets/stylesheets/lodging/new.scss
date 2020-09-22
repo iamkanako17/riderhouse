@@ -1,21 +1,22 @@
-.new-main {
+.new_header {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.lodge-addmain 
   background-color: #ffffff;
 }
 
-.lodge-regist-title {
+.lodge-title {
   margin: 0px auto;
   padding: 40px;
   border-bottom: 7px solid #f5a500;
 }
 
-.lodge-info {
-  width: 60%;
-  margin: 0px auto;
-  padding: 35px;
+.lodge-address {
+  width: 100%;
+  padding: 0 100px;
   background-color: whitesmoke;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  padding-top: 50px;
 }
 
 .message1 {
@@ -55,17 +56,9 @@
 }
 
 .lodge-text {
-  border: 1px solid coral;
   border-radius: 2px;
   margin-bottom: 25px;
-}
-
-.select-box {
-  height: 30px;
-  width: 90px;
   border: 1px solid coral;
-  border-radius: 2px;
-  margin-bottom: 25px;
 }
 
 .form-text {
@@ -74,4 +67,9 @@
 
 label {
   font-weight: bold;
+}
+
+#map {
+  height: 200px;
+  width: 60%;
 }

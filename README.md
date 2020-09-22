@@ -43,33 +43,21 @@ Riders can book a guest house or rider house on the trip.
   - has_one: inn_description
 
   ## lodgings table
-  | Column         |     Type     |        Options                  |
-  | -------------- | ------------ | ------------------------------- |
-  | lodge_name     | string       | null: false                     |
-  | price          | string       | null: false                     |
-  | postcode       | string       | null: false                     |
-  | prefecture     | integer      | null: false                     |
-  | city           | string       | null: false                     |
-  | block_number   | string       | null: false                     |
-  | building       | string       |                                 |
-  | host_user_id   | integer      | null: false                     |
+  | Column            |     Type     |        Options                  |
+  | ----------------- | ------------ | ------------------------------- |
+  | lodge_name        | string       | null: false                     |
+  | price             | string       | null: false                     |
+  | postcode          | string       | null: false                     |
+  | prefecture_city   | integer      | null: false                     |
+  | latitude          | float        | null: false                     |
+  | longitude         | float        | null: false                     |
+  | block_number      | string       | null: false                     |
+  | building          | string       |                                 |
+  | host_user_id      | integer      | null: false                     |
 
   ### association
   - belongs_to: host_user
 
-  ## guest_users table
-  | Column         |     Type     |        Options                  |
-  | -------------- | ------------ | ------------------------------- |
-  | nickname       | string       | null: false                     |
-  | email          | string       | null: false, unique: true       |
-  | password       | string       | null: false                     |
-  | phone          | string       | null: false                     |
-  | guestname      | string       | null: false                     |
-  | guestname_kana | string       | null: false                     |
-  | image          | string       |                                 |
-
-  ### association
-  - has_many: reservations
 
   ## reservations table
   | Column         |     Type     |        Options                  |

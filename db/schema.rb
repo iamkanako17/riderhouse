@@ -55,14 +55,15 @@ ActiveRecord::Schema.define(version: 2020_09_10_130223) do
     t.string "lodge_name", null: false
     t.integer "price", null: false
     t.string "postcode", null: false
-    t.integer "prefecture_id", null: false
-    t.string "city", null: false
+    t.string "prefecture_city", null: false
     t.string "block_number", null: false
     t.string "building"
-    t.text "description", null: false
+    t.string "description", null: false
     t.integer "host_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
