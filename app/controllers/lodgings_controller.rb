@@ -28,10 +28,10 @@ class LodgingsController < ApplicationController
   end
 
   def update
-    lodge = Lodging.find(lodge_params)
+    lodge = Lodging.find(params[:id])
     if lodge.valid?
       lodge.update(lodge_params)
-      redirect_to root_path
+      redirect_to lodging_path(lodge.id)
     else
       render :edit
     end
