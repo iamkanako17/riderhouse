@@ -3,7 +3,7 @@
   <div class='nav'>
     <ul class="nav-bar">
 
-      
+
       <li class="contents">
         <%= link_to root_path do %>
           <i class="fas fa-home"></i>
@@ -21,12 +21,10 @@
     </ul>
 
     <div>
-      <form class="search-form" action="#">
-          <input class='input-box' placeholder='キーワードから探す'>
-          <button class="search-button">
-            <i class="fas fa-search"></i>
-          </button>
-      </form>
+      <%= form_with(url: search_lodgings_path, local: true, method: :get, class: "search-form") do |f| %>
+        <%= f.text_field :keyword, placeholder: "都道府県・市区町村から探す", class: "input-box" %>
+        <%= f.submit "search", class: "search-button"%>
+      <% end %>
     </div>
   </div>
 </header>

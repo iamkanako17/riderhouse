@@ -1,15 +1,6 @@
 <%= render "shared/header" %>
 
-<body>
-  <div class="title">
-    <div class="title-contents">
-      <%= image_tag "homeindex_moter.jpg", class: 'title-img'%>
-      <h2>ライダーハウス検索サイト</h2>
-    </div>
-  </div>
-
-  <h2>全国の宿一覧</h2>
-
+<div class="contents row">
   <div class="main">
     <% @lodges.each do |lodge| %>
       <div class="swiper-container">
@@ -46,4 +37,4 @@
     },
   });
   </script>
-</body>
+</div>
