@@ -1,11 +1,14 @@
-# Riderhouse
+# アプリ名
+Riderhouse Book
 
-## description
-Riders can book a guest house or rider house on the trip.
+## 概要
+全国のバイクで旅をするライダーのために、宿を探しやすくするサイト。
 
-## URL
+## 制作背景
+私自身、バイクで北海道へ１０日間のツーリングをした時、ライダーは多いもののそのようない人たちが宿泊する「ライダーハウス」を検索するサイトがなく、宿泊先を探すのにとても苦労したという経験から、一覧で閲覧できて検索できるサイトを作成したら利用者にとっても、宿泊先のホストにとっても良いのではと思い、今回このサイトを制作しようと考えました。
 
-## account for test
+## 実装予定の内容
+
 
 ## Usage
   1. you can register as a host or an guest user.
