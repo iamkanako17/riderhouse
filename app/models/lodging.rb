@@ -7,7 +7,14 @@ class Lodging < ApplicationRecord
   belongs_to :host_user
   has_many_attached :images
 
-  # validates :prefecture_id, numericality: { other_than: 0 }
+  def self.search(search)
+    if search != ""
+      Lodging.where('prefecture_city LIKE(?)', "%#{search}%")
+    else
+      Lodging.all
+    end
+  end
+  
   validates :price, presence: true, numericality: { with: /[0-9]/ }
 
   with_options presence: true do

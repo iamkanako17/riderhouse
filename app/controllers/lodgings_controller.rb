@@ -45,6 +45,9 @@ class LodgingsController < ApplicationController
     end
   end
 
+  def search
+    @lodges = Lodging.search(params[:keyword])
+  end
 
   private
 
