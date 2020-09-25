@@ -4,16 +4,9 @@ class Lodging < ApplicationRecord
   geocoded_by :prefecture_city
   after_validation :geocode
 
-  belongs_to :host_user
-  has_many_attached :images
 
-  def self.search(search)
-    if search != ""
-      Lodging.where('prefecture_city LIKE(?)', "%#{search}%")
-    else
-      Lodging.all
-    end
-  end
+  belongs_to :host_user
+  has_many_attached :images, dependent: :destroy
   
   validates :price, presence: true, numericality: { with: /[0-9]/ }
 
@@ -25,5 +18,13 @@ class Lodging < ApplicationRecord
     validates :block_number
     validates :description
     validates :images
+  end
+
+  def self.search(search)
+    if search != ""
+      Lodging.where('prefecture_city LIKE(?)', "%#{search}%")
+    else
+      Lodging.all
+    end
   end
 end

@@ -7,26 +7,12 @@ Riderhouse Book
 ## 制作背景
 私自身、バイクで北海道へ１０日間のツーリングをした時、ライダーは多いもののそのようない人たちが宿泊する「ライダーハウス」を検索するサイトがなく、宿泊先を探すのにとても苦労したという経験から、一覧で閲覧できて検索できるサイトを作成したら利用者にとっても、宿泊先のホストにとっても良いのではと思い、今回このサイトを制作しようと考えました。
 
+## DEMO
+- https://gyazo.com/4d9979685086aa4327aa0e136608b147
+
 ## 実装予定の内容
-
-
-## Usage
-  1. you can register as a host or an guest user.
-  2. If you are a host user, you can register on guest house information.
-  3. If you are a guest user,you can see the list of guest houses and make a reservation.
-  4. Guest users can use the hotel while trip.
-
-## problem-solving
-  Helping riders and backpackers find cheap and fast accommodation on the road.
-  For the host, we hope to contribute to the increase of users and regional revitalization.
-
-## requirement
-  * Host user registration, inn information registration function
-  * User registration function
-  * Regional category creation
-  * Inn list display function
-  * Payment, reservation function
-  * Inn detatils display function
+- google calender APIの実装
+- 予約機能の実装
 
   # database
   ## host_users table
@@ -43,7 +29,7 @@ Riderhouse Book
   | inn_description_id   | integer      | null: false, foreign_key: true  |
 
   ### association
-  - has_one: inn_description
+  - has_many: inn_description
 
   ## lodgings table
   | Column            |     Type     |        Options                  |

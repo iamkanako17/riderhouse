@@ -20,8 +20,7 @@ class LodgingsController < ApplicationController
   end
 
   def show
-    @lat = @lodge.latitude
-    @lng = @lodge.longitude
+    
   end
 
   def edit
