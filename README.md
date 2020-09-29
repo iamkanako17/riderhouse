@@ -8,8 +8,9 @@ Riderhouse Book
 私自身、バイクで北海道へ１０日間のツーリングをした時、ライダーは多いもののそのようない人たちが宿泊する「ライダーハウス」を検索するサイトがなく、宿泊先を探すのにとても苦労したという経験から、一覧で閲覧できて検索できるサイトを作成したら利用者にとっても、宿泊先のホストにとっても良いのではと思い、今回このサイトを制作しようと考えました。
 
 ## DEMO
-- ![riderhouse](https://user-images.githubusercontent.com/69146154/94519179-350e1580-0265-11eb-8ecb-9835ce987165.jpg)
-- ![Uploading riderhouse.gif…]()
+ ![riderhouse](https://user-images.githubusercontent.com/69146154/94519179-350e1580-0265-11eb-8ecb-9835ce987165.jpg)
+ ![riderhouse](https://user-images.githubusercontent.com/69146154/94519520-9fbf5100-0265-11eb-98f1-9ca3b4cdbd5b.gif)
+
 
 
 ## 実装予定の内容
