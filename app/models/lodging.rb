@@ -1,8 +1,7 @@
 class Lodging < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
 
   geocoded_by :prefecture_city
-  after_validation :geocode
+  after_validation :geocode, if: :prefecture_city_changed?
 
 
   belongs_to :host_user

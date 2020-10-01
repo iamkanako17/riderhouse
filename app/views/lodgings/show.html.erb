@@ -32,7 +32,6 @@
       </div>
       <div class="under-child2">
         <div id="map"></div>
-        <script defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAP_KEY']%>&callback=initMap"></script>
       </div>
     </div>
 
@@ -47,20 +46,25 @@
 
   <footer>©️ Kanako Kurasawa2020</footer>
 
-  <script>
+  <script type="text/javascript">
+    var map;
+    var marker;
+    var pin = { lat: <%= @lodge.latitude %>, lng: <%= @lodge.longitude %> };
     function initMap() {
-      let pin ={lat: <%= @lodge.latitude %>, lng: <%= @lodge.longitude %>};
-      let map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 12, 
-                center: pin
+      var geocoder = new google.maps.Geocoder()
+      var map = new google.maps.Map(document.getElementById('map'), {
+                center: pin,
+                zoom: 12
               });
-      let transitLayer = new google.maps.TransitLayer();
+      
+      var transitLayer = new google.maps.TransitLayer();
       transitLayer.setMap(map);
 
-      let marker = new google.maps.Marker({
-                    position: pin,
-                    map: map
-                  });
+      var marker = new google.maps.Marker({
+                  position: pin,
+                  map: map
+                });
     }
   </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAP_KEY']%>&callback=initMap"></script>
 </body>
