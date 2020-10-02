@@ -10,7 +10,13 @@ Riderhouse Book
 ## DEMO
  ![riderhouse](https://user-images.githubusercontent.com/69146154/94519520-9fbf5100-0265-11eb-98f1-9ca3b4cdbd5b.gif)
 
+## URL
+https://riderhouse-book.herokuapp.com/
 
+##投稿ユーザー
+username: かおり
+mail: kaori@kaori.jp
+pass: kaokao11
 
 ## 実装予定の内容
 - google calender APIの実装
