@@ -13,10 +13,10 @@ Riderhouse Book
 ## URL
 https://riderhouse-book.herokuapp.com/
 
-##投稿ユーザー
-username: かおり
-mail: kaori@kaori.jp
-pass: kaokao11
+## 投稿ユーザー
+- username: かおり
+- mail: kaori@kaori.jp
+- pass: kaokao11
 
 ## 実装予定の内容
 - google calender APIの実装
