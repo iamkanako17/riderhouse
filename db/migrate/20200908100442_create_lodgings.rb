@@ -11,8 +11,5 @@ class CreateLodgings < ActiveRecord::Migration[6.0]
       t.integer         :host_user_id,   foreign_key: true
       t.timestamps
     end
-
-    add_column :lodgings, :latitude, :float
-    add_column :lodgings, :longitude, :float
   end
 end

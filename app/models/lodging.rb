@@ -1,9 +1,5 @@
 class Lodging < ApplicationRecord
 
-  geocoded_by :prefecture_city
-  after_validation :geocode, if: :prefecture_city_changed?
-
-
   belongs_to :host_user
   has_many_attached :images, dependent: :destroy
   
