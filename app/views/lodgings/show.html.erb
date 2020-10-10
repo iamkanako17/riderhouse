@@ -47,24 +47,24 @@
   <footer>©️ Kanako Kurasawa2020</footer>
 
   <script type="text/javascript">
-  function googleMap() {
-    'use strict';
-    var map = document.getElementById('map');
-    var geocoder = new google.maps.Geocoder();
+    var map;
+    var marker;
+    var pin = { lat: <%= @lodge.latitude %>, lng: <%= @lodge.longitude %> };
+    function initMap() {
+      var geocoder = new google.maps.Geocoder()
+      var map = new google.maps.Map(document.getElementById('map'), {
+                center: pin,
+                zoom: 12
+              });
+      
+      var transitLayer = new google.maps.TransitLayer();
+      transitLayer.setMap(map);
 
-    geocoder.geocode({ address: '<%= @lodge.prefecture_city%>', region: 'jp'}, function(results, status){
-
-      if (status === 'OK' && results[0]) {
-        new google.maps.Map(map, {
-          center: results[0].geometry.location,
-          zoom: 12
-        });
-      } else {
-        alert('失敗しました。 理由:' + status);
-        return;
-      }
-    });
-  }
+      var marker = new google.maps.Marker({
+                  position: pin,
+                  map: map
+                });
+    }
   </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAP_KEY']%>&callback=googleMap"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAP_KEY']%>&callback=initMap"></script>
 </body>
