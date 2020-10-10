@@ -21,6 +21,8 @@ https://riderhouse-book.herokuapp.com/
 ## 実装予定の内容
 - google calender APIの実装
 - 予約機能の実装
+- 詳細ページに、宿情報に関する項目の追加
+- BootStrapを使用し、ビューの見やすさを向上させる
 
   # database
   ## host_users table
@@ -46,8 +48,6 @@ https://riderhouse-book.herokuapp.com/
   | price             | string       | null: false                     |
   | postcode          | string       | null: false                     |
   | prefecture_city   | integer      | null: false                     |
-  | latitude          | float        | null: false                     |
-  | longitude         | float        | null: false                     |
   | block_number      | string       | null: false                     |
   | building          | string       |                                 |
   | host_user_id      | integer      | null: false                     |
