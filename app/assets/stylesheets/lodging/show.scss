@@ -2,6 +2,11 @@ body {
   margin: 0;
 }
 
+.lodge_name {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #717171;
+}
+
 .top {
   width: 100%;
   padding: 0 100px;
@@ -13,12 +18,12 @@ body {
   padding-top: 30px;
 }
 
-.text-info {
-  font-weight: 600;
-  font-family: sans-serif;
-  font-size: 26px;
-  color: #222323;
-  margin: 0;
+.contact {
+  margin-top: 100px !important;
+}
+.map-area {
+  margin: 100px auto !important;
+
 }
 
 .where-lodge {
