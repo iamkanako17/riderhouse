@@ -1,9 +1,14 @@
 <%= render "shared/header" %>
 
-<div class="contents row">
-  <div class="main">
-    <% @lodges.each do |lodge| %>
-      <div class="swiper-container">
+
+  <h3 class="center mt-5">
+    <i class="fas fa-search"></i>検索結果
+  </h3>
+  <% @lodges.each do |lodge| %>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+
+      <div class="col card mt-5 mx-auto d-flexbox" style="width: 11rem;">
+        <div class="card-img-top swiper-container swoper-container-initialized swiper-container-vertical">
           <div class="swiper-wrapper">
             <% lodge.images.each do |image| %>
               <div class="swiper-slide">
@@ -13,12 +18,25 @@
               </div>
             <% end %>
           </div>
-
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
+        </div>
+
+        <div class="card-body text-center">
+          <h4 class="card-title center">
+            <%= lodge.lodge_name %>
+          </h4>
+          <h6 class="card-subtitle">
+            <%= lodge.prefecture_city %>
+          </h6>
+          <p class="card-subtitle mt-2" style="color: red;">
+            ￥<%= lodge.price %>/泊
+          </p>
+        </div>
       </div>
-    <% end %>
-  </div>
+
+    </div>
+  <%end%>
 
   <footer>©️ Kanako Kurasawa2020</footer>
 
