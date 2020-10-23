@@ -13,6 +13,7 @@ class Lodging < ApplicationRecord
     validates :postcode, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
     validates :prefecture_city
     validates :block_number
+    validates :phone, format: { with: /\A^0\d{1,3}-\d{1,4}-\d{4}$\z/ }
     validates :description
     validates :images
   end
