@@ -6,7 +6,7 @@
   <main id="site-content">
     <div class="top">
       <div class="top-text" style="max-width: 1120px;">
-        <h1 class="text-info">
+        <h1 class="title">
           <%= @lodge.lodge_name %>
         </h1>
       </div>
@@ -18,28 +18,34 @@
     </div>
 
     <div class="center">
-      <div class="center-image">
+      <div class="row">
         <% @lodge.images.each do |image| %>
-          <%= image_tag image, class:'show-images'%>
+          <%= image_tag image, class:'col'%>
         <% end %>
       </div>
     </div>
     
     <div class="under">
-      <div class="under-child1">
-        <p class="child1-title">宿について</p>
+      <div class="container">
+        <h4 class="child1-title center mt-5 mb-3" style="font-size: 25px;">宿について</h4>
         <%= @lodge.description %>
       </div>
-      <div class="under-child2">
-        <div id="map"></div>
+      <div class="container">
+        <h4 class="child1-title center mt-5 mb-3" style="font-size: 25px;">お問い合わせ</h4>
+        <i class="fas fa-phone center"><%= @lodge.phone%> </i>
+      </div>
+
+      <div class="container mt-5">
+        <h4 class="child1-title center mt-5 mb-2" style="font-size: 25px;">地図</h4>
+        <div class="row">
+          <div id="map" class="col"></div>
+        </div>
       </div>
     </div>
 
     <% if host_user_signed_in? && current_host_user.id == @lodge.host_user_id %>
       <%= link_to '宿の編集', edit_lodging_path(@lodge.id), method: :get, class:"edit-btn" %>
       <%= link_to '削除', lodging_path(@lodge.id), method: :delete, class:"lodge-delete" %>
-    <% else %>
-      <%# <% link_to '予約する', 予約のformオブジェクトのパス(@lodge.id), httpメソッド, class:"クラス名" %>
     <% end %>
   </main>
 
