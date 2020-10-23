@@ -1,12 +1,10 @@
 class Lodging < ApplicationRecord
-
-  geocoded_by :prefecture_city
-  after_validation :geocode, if: :prefecture_city_changed?
+  extend ActiveHash::Associations::ActiveRecordExtensions
 
 
   belongs_to :host_user
-  has_many_attached :images, dependent: :destroy
-  
+  has_many_attached :images, dependent: :destoy
+
   validates :price, presence: true, numericality: { with: /[0-9]/ }
 
   with_options presence: true do
