@@ -1,5 +1,5 @@
 class Lodging < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
+  # extend ActiveHash::Associations::ActiveRecordExtensions
 
 
   belongs_to :host_user
