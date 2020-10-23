@@ -1,30 +1,46 @@
 <%= render "shared/header" %>
 
 <body>
-  <div class="title">
-    <div class="title-contents">
+  <div class="container-fluid">
+    <div class="row">
       <%= image_tag "homeindex_moter.jpg", class: 'title-img'%>
-      <h2>ライダーハウス検索サイト</h2>
     </div>
   </div>
 
-  <h2>全国の宿一覧</h2>
+  <h3 class="text-center bg-light font-weight-bold mt-5 my-3">全国の宿一覧</h3>
 
-  <div class="main">
+  <div class="containr">
     <% @lodges.each do |lodge| %>
-      <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <% lodge.images.each do |image| %>
-              <div class="swiper-slide">
-                <%= link_to lodging_path(lodge.id), method: :get do %>
-                  <%= image_tag image, class:'images'%>
-                <% end %>
-              </div>
-            <% end %>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+
+        <div class="col card mt-5 mx-auto d-flexbox" style="width: 11rem;">
+          <div class="card-img-top swiper-container swoper-container-initialized swiper-container-vertical">
+            <div class="swiper-wrapper">
+              <% lodge.images.each do |image| %>
+                <div class="swiper-slide">
+                  <%= link_to lodging_path(lodge.id), method: :get do %>
+                    <%= image_tag image, class:'images'%>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
 
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <div class="card-body text-center">
+            <h4 class="card-title center">
+              <%= lodge.lodge_name %>
+            </h4>
+            <h6 class="card-subtitle">
+              <%= lodge.prefecture_city %>
+            </h6>
+            <p class="card-subtitle mt-2" style="color: red;">
+              ￥<%= lodge.price %>/泊
+            </p>
+          </div>
+        </div>
+
       </div>
     <% end %>
   </div>
