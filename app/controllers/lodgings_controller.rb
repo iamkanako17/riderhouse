@@ -20,7 +20,6 @@ class LodgingsController < ApplicationController
   end
 
   def show
-    gon.lodge = @lodge
   end
 
   def edit
